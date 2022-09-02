@@ -1,4 +1,6 @@
 import { thriftTypes } from "@igpapi/mqttot";
+import { random } from "lodash";
+import Chance from "chance";
 
 export type ILauncherMobileConfig = {
   unit_type: string;
@@ -86,8 +88,63 @@ export class AndroidState {
     return { u: this.session.user, id: this.session.uid };
   }
 
+  public get headers() {
+    const headers = {
+      "X-IG-Bandwidth-Speed-KBPS": `${random(500, 3000)}.000`,
+      "X-IG-Bandwidth-TotalBytes-B": "0",
+      "X-IG-Bandwidth-TotalTime-MS": "0",
+      "X-Ig-Nav-Chain": "",
+      "x-ig-eu-dc-enabled": "0",
+      "x-bloks-version-id": this.application.BLOKS_VERSION_ID,
+      "x-ig-www-claim": this.session.igWWWClaim,
+      "x-bloks-is-layout-rtl": this.device.isLayoutRTL.toString(),
+      "x-ig-device-id": this.device.device_id,
+      "x-ig-family-device-id": this.device.familyId,
+      "x-ig-timezone-offset": this.device.timezoneOffset,
+      "x-ig-connection-type": "WiFi",
+      "x-ig-capabilities": this.application.CAPABILITIES,
+      "x-ig-app-id": this.application.FACEBOOK_ANALYTICS_APPLICATION_ID,
+      priority: "u=3",
+      "user-agent": this.userAgent,
+      "accept-language": this.device.language.replace("_", "-"),
+      authorization: this.session.authorization,
+      "x-mid": this.session.xMid,
+      "ig-u-ig-direct-region-hint": this.session.regionHint,
+      "ig-u-shbid": this.session.shbid,
+      "ig-u-shbts": this.session.shbts,
+      "ig-u-ds-user-id": this.session.dsUserId,
+      "ig-u-rur": this.session.rur,
+      "ig-intended-user-id": this.session.dsUserId,
+      "x-ig-app-locale": this.device.platform == "android" ? this.device.language.replace("-", "_") : this.device.language.split("-")[0],
+      "x-ig-app-startup-country": "LT",
+      "x-ig-device-locale": this.device.platform == "android" ? this.device.language.replace("-", "_") : this.device.language.split("-")[0],
+      "x-ig-mapped-locale": this.device.language.replace("-", "_"),
+      "x-pigeon-session-id": this.pigeonSessionId(),
+      "x-pigeon-rawclienttime": this.device.platform == "android" ? (Date.now() / 1000).toFixed(3) : (Date.now() / 1000).toFixed(6),
+      "x-fb-http-engine": "Liger",
+      "x-fb-client-ip": "True",
+      "x-fb-server-cluster": "True",
+      "accept-encoding": "gzip, deflate",
+      "x-ig-android-id": typeof this.device.androidId !== undefined ? this.device.androidId : "",
+    };
+    if (this.device.platform != "android") {
+      delete headers["x-ig-android-id"]
+    }
+    return headers;
+  }
+
   public getProxy() {
     return this.device.proxy;
+  }
+
+  public pigeonSessionId() {
+    const pigeonSessionIdLifetime = 1200000;
+    const guid = new Chance(`pigeonSessionId${this.device.id}${Math.round(Date.now() / pigeonSessionIdLifetime)}`).guid();
+    if (this.device.platform == "android") {
+      return `UFS-${guid}-0`;
+    } else {
+      return guid;
+    }
   }
 
   public extractUserId(): string {
