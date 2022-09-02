@@ -49,7 +49,7 @@ export declare class AndroidState {
         u: string | undefined;
         id: number | undefined;
     };
-    get headers(): {
+    getHeaders(): {
         "X-IG-Bandwidth-Speed-KBPS": string;
         "X-IG-Bandwidth-TotalBytes-B": string;
         "X-IG-Bandwidth-TotalTime-MS": string;

@@ -88,7 +88,7 @@ export class AndroidState {
     return { u: this.session.user, id: this.session.uid };
   }
 
-  public get headers() {
+  public getHeaders() {
     const headers = {
       "X-IG-Bandwidth-Speed-KBPS": `${random(500, 3000)}.000`,
       "X-IG-Bandwidth-TotalBytes-B": "0",

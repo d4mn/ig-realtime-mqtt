@@ -62,7 +62,7 @@ class AndroidState {
     get user() {
         return { u: this.session.user, id: this.session.uid };
     }
-    get headers() {
+    getHeaders() {
         const headers = {
             "X-IG-Bandwidth-Speed-KBPS": `${(0, lodash_1.random)(500, 3000)}.000`,
             "X-IG-Bandwidth-TotalBytes-B": "0",
