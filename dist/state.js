@@ -102,7 +102,6 @@ class AndroidState {
             "x-ig-android-id": typeof this.device.androidId !== undefined ? this.device.androidId : "",
         };
         if (this.device.platform != "android") {
-            delete headers["x-ig-android-id"];
         }
         return headers;
     }
