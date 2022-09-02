@@ -1,0 +1,1 @@
+{"version":3,"file":"live-question-submission-status.payload.d.ts","sourceRoot":"","sources":["../../src/payloads/live-question-submission-status.payload.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,mCAAmC;IAClD,qCAAqC,EAAE,iCAAiC,CAAC;CAC1E;AAED,MAAM,WAAW,iCAAiC;IAChD,sBAAsB,EAAE,MAAM,CAAC;IAC/B,YAAY,EAAE,MAAM,CAAC;IACrB,sBAAsB,EAAE,OAAO,CAAC;IAChC,mBAAmB,EAAE,MAAM,CAAC;CAC7B"}

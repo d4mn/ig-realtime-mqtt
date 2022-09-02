@@ -1,0 +1,60 @@
+{
+  "name": "@igpapi/realtime",
+  "version": "3.71.1",
+  "description": "> TODO: description",
+  "author": "bowzee <dilame.nickolson@gmail.com>",
+  "homepage": "https://github.com/dilame/instagram-private-api/tree/master/packages/mqtt#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "dist",
+    "src/**/*[!.spec].ts"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dilame/igpapi.git"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rimraf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "bugs": {
+    "url": "https://github.com/dilame/igpapi/issues"
+  },
+  "dependencies": {
+    "@igpapi/mqttot": "github:d4mn/mqttot",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.21",
+    "mqtts": "1.5.0",
+    "rxjs": "^7.5.6",
+    "ts-custom-error": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/jest": "~27.5",
+    "@types/lodash": "^4.14.184",
+    "@types/node": "~16",
+    "@typescript-eslint/eslint-plugin": "~5.26",
+    "@typescript-eslint/parser": "~5.26",
+    "eslint": "~8.16",
+    "eslint-config-prettier": "~8.5",
+    "eslint-plugin-jest": "~26.2",
+    "jest": "~28.1",
+    "prettier": "~2.6",
+    "rimraf": "~3.0",
+    "ts-jest": "~28.0",
+    "tsutils": "~3.21",
+    "typescript": "~4.7"
+  },
+  "peerDependencies": {
+    "typedi": "*"
+  }
+}

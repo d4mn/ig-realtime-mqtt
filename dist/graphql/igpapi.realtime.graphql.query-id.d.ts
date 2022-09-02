@@ -1,0 +1,26 @@
+export declare enum IgpapiRealtimeGraphqlQueryId {
+    appPresence = "17846944882223835",
+    asyncAdSub = "17911191835112000",
+    clientConfigUpdate = "17849856529644700",
+    directStatus = "17854499065530643",
+    directTyping = "17867973967082385",
+    liveWave = "17882305414154951",
+    interactivityActivateQuestion = "18005526940184517",
+    interactivityRealtimeQuestionSubmissionsStatus = "18027779584026952",
+    interactivitySub = "17907616480241689",
+    liveRealtimeComments = "18006547105399202",
+    liveReactions = "17911016540418009",
+    liveTypingIndicator = "17926314067024917",
+    mediaFeedback = "17877917527113814",
+    reactNativeOTA = "17861494672288167",
+    videoCallCoWatchControl = "17878679623388956",
+    videoCallInAlert = "17878679623388956",
+    videoCallPrototypePublish = "18031704190010162",
+    videoCallParticipantDelivery = "17977239895057311",
+    zeroProvision = "17913953740109069",
+    inappNotification = "17899377895239777",
+    businessDelivery = "17940467278199720",
+    livePinnedProduct = "17858277713002581",
+    userThreadPresence = "18170461249042896"
+}
+//# sourceMappingURL=igpapi.realtime.graphql.query-id.d.ts.map
