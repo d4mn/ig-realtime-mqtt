@@ -125,10 +125,10 @@ export class AndroidState {
       "x-fb-client-ip": "True",
       "x-fb-server-cluster": "True",
       "accept-encoding": "gzip, deflate",
-      "x-ig-android-id": typeof this.device.androidId !== undefined ? this.device.androidId : "",
+      "x-ig-android-id": typeof this.device.androidId !== "undefined" ? this.device.androidId : "",
     };
     if (this.device.platform != "android") {
-      //delete headers["x-ig-android-id"]
+      delete headers["x-ig-android-id"]
     }
     return headers;
   }
