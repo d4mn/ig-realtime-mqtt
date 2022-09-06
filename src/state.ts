@@ -93,7 +93,7 @@ export class AndroidState {
       "X-IG-Bandwidth-Speed-KBPS": `${random(500, 3000)}.000`,
       "X-IG-Bandwidth-TotalBytes-B": "0",
       "X-IG-Bandwidth-TotalTime-MS": "0",
-      "X-Ig-Nav-Chain": "",
+      "X-Ig-Nav-Chain": "ExploreFragment:explore_popular:4:main_search::,SingleSearchTypeaheadTabFragment:search_typeahead:5:button::",
       "x-ig-eu-dc-enabled": "0",
       "x-bloks-version-id": this.application.BLOKS_VERSION_ID,
       "x-ig-www-claim": this.session.igWWWClaim,
