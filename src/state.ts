@@ -33,8 +33,6 @@ export const Application = {
 export class AndroidSession {
   igWWWClaim?: string;
   authorization?: string;
-  passwordEncryptionPubKey?: string;
-  passwordEncryptionKeyId?: string;
   regionHint?: string;
   shbid?: string;
   shbts?: string;
@@ -48,8 +46,6 @@ export class AndroidSession {
   constructor(session: any) {
     this.igWWWClaim = session.igWWWClaim;
     this.authorization = session.authorization;
-    this.passwordEncryptionPubKey = session.passwordEncryptionPubKey;
-    this.passwordEncryptionKeyId = session.passwordEncryptionKeyId;
     this.regionHint = session.regionHint;
     this.shbid = session.shbid;
     this.shbts = session.shbts;

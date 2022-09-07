@@ -25,8 +25,6 @@ export declare const Application: {
 export declare class AndroidSession {
     igWWWClaim?: string;
     authorization?: string;
-    passwordEncryptionPubKey?: string;
-    passwordEncryptionKeyId?: string;
     regionHint?: string;
     shbid?: string;
     shbts?: string;

@@ -30,8 +30,6 @@ class AndroidSession {
     constructor(session) {
         this.igWWWClaim = session.igWWWClaim;
         this.authorization = session.authorization;
-        this.passwordEncryptionPubKey = session.passwordEncryptionPubKey;
-        this.passwordEncryptionKeyId = session.passwordEncryptionKeyId;
         this.regionHint = session.regionHint;
         this.shbid = session.shbid;
         this.shbts = session.shbts;
