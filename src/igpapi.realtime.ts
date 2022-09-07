@@ -33,8 +33,7 @@ export class IgpapiRealtime extends EventEmitter {
     public readonly subscriptions: SubscriptionManager,
     public readonly graphql: IgpapiRealtimeGraphqlQuery,
     public readonly iris: Iris,
-    public readonly topic: RealtimeTopic,
-    public readonly direct: RealtimeDirect
+    public readonly topic: RealtimeTopic
   ) {
     super();
     this.$ = this.subject.asObservable();
