@@ -3,17 +3,14 @@ import debug from "debug";
 import { RealtimeMqttManager } from "./realtime.mqtt.manager";
 import { RealtimeMqttStrategy } from "./realtime.mqtt.strategy";
 import { SubscriptionManager } from "./subscriptions/subscription-manager";
-import { Iris } from "./iris/iris";
 import { RealtimeSubject } from "./realtime.subject";
 import { RealtimeTopic } from "./realtime.topic";
-import { RealtimeDirect } from "./direct/realtime.direct";
 import { fromEvent, Subscription } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import { tryUnzipAsync } from "@igpapi/mqttot";
 import { RealtimeMessage } from "./realtime.message";
 import { graphqlTransformer } from "./transformers/graphql.transformer";
 import { skywalkerTransformer } from "./transformers/skywalker.transformer";
-import { IgpapiRealtimeGraphqlQuery } from "./graphql/index.js";
 import { EventEmitter } from "stream";
 
 const log = debug("ig:realtime:core");
@@ -31,8 +28,6 @@ export class IgpapiRealtime extends EventEmitter {
     public readonly mqtt: RealtimeMqttManager,
     private readonly subject: RealtimeSubject,
     public readonly subscriptions: SubscriptionManager,
-    public readonly graphql: IgpapiRealtimeGraphqlQuery,
-    public readonly iris: Iris,
     public readonly topic: RealtimeTopic
   ) {
     super();
@@ -76,9 +71,6 @@ export class IgpapiRealtime extends EventEmitter {
           try {
             await this.subscriptions.restore();
             await this.strategy.setup(client);
-            if (this.iris.hasStrategy()) {
-              await this.iris.subscribe();
-            }
             res();
           } catch (e) {
             rej(e);

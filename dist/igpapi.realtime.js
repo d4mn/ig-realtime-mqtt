@@ -25,14 +25,12 @@ const skywalker_transformer_1 = require("./transformers/skywalker.transformer");
 const stream_1 = require("stream");
 const log = (0, debug_1.default)("ig:realtime:core");
 class IgpapiRealtime extends stream_1.EventEmitter {
-    constructor(strategy, mqtt, subject, subscriptions, graphql, iris, topic) {
+    constructor(strategy, mqtt, subject, subscriptions, topic) {
         super();
         this.strategy = strategy;
         this.mqtt = mqtt;
         this.subject = subject;
         this.subscriptions = subscriptions;
-        this.graphql = graphql;
-        this.iris = iris;
         this.topic = topic;
         this.safeDisconnect = false;
         _IgpapiRealtime_subscription.set(this, void 0);
@@ -74,9 +72,6 @@ class IgpapiRealtime extends stream_1.EventEmitter {
                 try {
                     await this.subscriptions.restore();
                     await this.strategy.setup(client);
-                    if (this.iris.hasStrategy()) {
-                        await this.iris.subscribe();
-                    }
                     res();
                 }
                 catch (e) {
