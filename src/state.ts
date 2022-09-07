@@ -80,6 +80,14 @@ export class AndroidState {
     return null;
   }
 
+  public get sessionid() {
+    if (this.session.authorization) {
+      const sess = JSON.parse(atob(this.session.authorization.replace("Bearer IGT:2:", "")))
+      return typeof sess.sessionid === "string" ? sess.sessionid : null;
+    }
+    return null;
+  }
+
   public get user() {
     return { u: this.session.user, id: this.session.uid };
   }
