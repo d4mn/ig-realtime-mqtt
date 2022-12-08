@@ -1,6 +1,6 @@
 import { thriftTypes } from "@igpapi/mqttot";
 import { random } from "lodash";
-import Chance from "chance";
+import crypto from "crypto";
 
 export type ILauncherMobileConfig = {
   unit_type: string;
@@ -143,7 +143,7 @@ export class AndroidState {
 
   public pigeonSessionId() {
     const pigeonSessionIdLifetime = 1200000;
-    const guid = new Chance(`pigeonSessionId${this.device.id}${Math.round(Date.now() / pigeonSessionIdLifetime)}`).guid();
+    const guid = crypto.randomUUID();
     if (this.device.platform == "android") {
       return `UFS-${guid}-0`;
     } else {

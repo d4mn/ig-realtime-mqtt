@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AndroidState = exports.AndroidSession = exports.Application = void 0;
 const lodash_1 = require("lodash");
-const chance_1 = __importDefault(require("chance"));
+const crypto_1 = __importDefault(require("crypto"));
 exports.Application = {
     android: {
         APP_VERSION: "248.0.0.17.109",
@@ -116,7 +116,7 @@ class AndroidState {
     }
     pigeonSessionId() {
         const pigeonSessionIdLifetime = 1200000;
-        const guid = new chance_1.default(`pigeonSessionId${this.device.id}${Math.round(Date.now() / pigeonSessionIdLifetime)}`).guid();
+        const guid = crypto_1.default.randomUUID();
         if (this.device.platform == "android") {
             return `UFS-${guid}-0`;
         }
