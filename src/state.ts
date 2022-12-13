@@ -44,7 +44,7 @@ export class AndroidSession {
   uid?: number;
 
   constructor(session: any) {
-    this.igWWWClaim = session.igWWWClaim;
+    this.igWWWClaim = session.igWWWClaim ? session.igWWWClaim : '0';
     this.authorization = session.authorization;
     this.regionHint = session.regionHint;
     this.shbid = session.shbid;
