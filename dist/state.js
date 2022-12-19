@@ -51,15 +51,20 @@ class AndroidState {
     get userAgent() {
         return this.session.userAgent;
     }
-    get cookies() {
+    get authorization() {
         if (this.session.authorization) {
-            return JSON.parse(atob(this.session.authorization.replace("Bearer IGT:2:", "")));
+            const dt = Buffer.from(this.session.authorization.replace("Bearer IGT:2:", ""), "base64").toString("utf8");
+            return JSON.parse(dt);
         }
         return null;
     }
+    ;
+    get cookies() {
+        return this.authorization;
+    }
     get sessionid() {
         if (this.session.authorization) {
-            const sess = JSON.parse(atob(this.session.authorization.replace("Bearer IGT:2:", "")));
+            const sess = this.authorization;
             return typeof sess.sessionid === "string" ? sess.sessionid : null;
         }
         return null;
@@ -115,7 +120,6 @@ class AndroidState {
         return this.device.proxy;
     }
     pigeonSessionId() {
-        const pigeonSessionIdLifetime = 1200000;
         const guid = crypto_1.default.randomUUID();
         if (this.device.platform == "android") {
             return `UFS-${guid}-0`;

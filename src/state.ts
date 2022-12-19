@@ -1,4 +1,3 @@
-import { thriftTypes } from "@igpapi/mqttot";
 import { random } from "lodash";
 import crypto from "crypto";
 
@@ -73,17 +72,22 @@ export class AndroidState {
     return this.session.userAgent;
   }
 
-  public get cookies() {
+  public get authorization(){
     if (this.session.authorization) {
-      return JSON.parse(atob(this.session.authorization.replace("Bearer IGT:2:", "")));
+      const dt = Buffer.from(this.session.authorization.replace("Bearer IGT:2:", ""), "base64").toString("utf8");
+      return JSON.parse(dt);
     }
     return null;
+  };
+
+  public get cookies() {
+    return this.authorization;
   }
 
   public get sessionid() {
     if (this.session.authorization) {
-      const sess = JSON.parse(atob(this.session.authorization.replace("Bearer IGT:2:", "")))
-      return typeof sess.sessionid === "string" ? sess.sessionid : null;
+        const sess = this.authorization;
+        return typeof sess.sessionid === "string" ? sess.sessionid : null;
     }
     return null;
   }
@@ -142,7 +146,6 @@ export class AndroidState {
   }
 
   public pigeonSessionId() {
-    const pigeonSessionIdLifetime = 1200000;
     const guid = crypto.randomUUID();
     if (this.device.platform == "android") {
       return `UFS-${guid}-0`;
