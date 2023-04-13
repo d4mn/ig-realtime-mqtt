@@ -57,7 +57,9 @@ export declare class AndroidState {
         "x-ig-eu-dc-enabled": string;
         "x-bloks-version-id": string;
         "x-ig-www-claim": string | undefined;
-        "x-bloks-is-layout-rtl": any;
+        "x-bloks-is-layout-rtl": string;
+        "X-Bloks-Is-Panorama-Enabled": string;
+        "X-IG-SALT-IDS": string;
         "x-ig-device-id": any;
         "x-ig-family-device-id": any;
         "x-ig-timezone-offset": any;
@@ -76,7 +78,7 @@ export declare class AndroidState {
         "ig-u-rur": string | undefined;
         "ig-intended-user-id": string | undefined;
         "x-ig-app-locale": any;
-        "x-ig-app-startup-country": string;
+        "x-ig-app-startup-country": any;
         "x-ig-device-locale": any;
         "x-ig-mapped-locale": any;
         "x-pigeon-session-id": string;
@@ -84,6 +86,7 @@ export declare class AndroidState {
         "x-fb-http-engine": string;
         "x-fb-client-ip": string;
         "x-fb-server-cluster": string;
+        "x-fb-connection-type": string;
         "accept-encoding": string;
         "x-ig-android-id": any;
     };

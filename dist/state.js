@@ -28,7 +28,7 @@ exports.Application = {
 };
 class AndroidSession {
     constructor(session) {
-        this.igWWWClaim = session.igWWWClaim ? session.igWWWClaim : '0';
+        this.igWWWClaim = session.igWWWClaim ? session.igWWWClaim : "0";
         this.authorization = session.authorization;
         this.regionHint = session.regionHint;
         this.shbid = session.shbid;
@@ -58,7 +58,6 @@ class AndroidState {
         }
         return null;
     }
-    ;
     get cookies() {
         return this.authorization;
     }
@@ -73,19 +72,22 @@ class AndroidState {
         return { u: this.session.user, id: this.session.uid };
     }
     getHeaders() {
+        const nextYear = Math.floor(Date.now() / 1000) + 31536000;
         const headers = {
-            "X-IG-Bandwidth-Speed-KBPS": `${(0, lodash_1.random)(500, 3000)}.000`,
-            "X-IG-Bandwidth-TotalBytes-B": "0",
-            "X-IG-Bandwidth-TotalTime-MS": "0",
+            "X-IG-Bandwidth-Speed-KBPS": `${(0, lodash_1.random)(2500000, 3000000) / 1000}`,
+            "X-IG-Bandwidth-TotalBytes-B": `${(0, lodash_1.random)(5000000, 90000000)}`,
+            "X-IG-Bandwidth-TotalTime-MS": `${(0, lodash_1.random)(2000, 9000)}`,
             "X-Ig-Nav-Chain": "ExploreFragment:explore_popular:4:main_search::,SingleSearchTypeaheadTabFragment:search_typeahead:5:button::",
             "x-ig-eu-dc-enabled": "0",
             "x-bloks-version-id": this.application.BLOKS_VERSION_ID,
             "x-ig-www-claim": this.session.igWWWClaim,
-            "x-bloks-is-layout-rtl": this.device.isLayoutRTL.toString(),
+            "x-bloks-is-layout-rtl": "false",
+            "X-Bloks-Is-Panorama-Enabled": "true",
+            "X-IG-SALT-IDS": `${(0, lodash_1.random)(1061162222, 1061262222)}`,
             "x-ig-device-id": this.device.device_id,
             "x-ig-family-device-id": this.device.familyId,
             "x-ig-timezone-offset": this.device.timezoneOffset,
-            "x-ig-connection-type": "WiFi",
+            "x-ig-connection-type": "WIFI",
             "x-ig-capabilities": this.application.CAPABILITIES,
             "x-ig-app-id": this.application.FACEBOOK_ANALYTICS_APPLICATION_ID,
             priority: "u=3",
@@ -93,14 +95,14 @@ class AndroidState {
             "accept-language": this.device.language.replace("_", "-"),
             authorization: this.session.authorization,
             "x-mid": this.session.xMid,
-            "ig-u-ig-direct-region-hint": this.session.regionHint,
+            "ig-u-ig-direct-region-hint": this.session.regionHint != "" ? this.session.regionHint : `RVA,${this.session.dsUserId},${nextYear},01f7eb128273f709612a35071025d7ea83f20f178201319a2e0ca30c3c555fffbb41a7ee`,
             "ig-u-shbid": this.session.shbid,
             "ig-u-shbts": this.session.shbts,
             "ig-u-ds-user-id": this.session.dsUserId,
             "ig-u-rur": this.session.rur,
             "ig-intended-user-id": this.session.dsUserId,
             "x-ig-app-locale": this.device.platform == "android" ? this.device.language.replace("-", "_") : this.device.language.split("-")[0],
-            "x-ig-app-startup-country": "LT",
+            "x-ig-app-startup-country": this.device.language.split("-")[1],
             "x-ig-device-locale": this.device.platform == "android" ? this.device.language.replace("-", "_") : this.device.language.split("-")[0],
             "x-ig-mapped-locale": this.device.language.replace("-", "_"),
             "x-pigeon-session-id": this.pigeonSessionId(),
@@ -108,6 +110,7 @@ class AndroidState {
             "x-fb-http-engine": "Liger",
             "x-fb-client-ip": "True",
             "x-fb-server-cluster": "True",
+            "x-fb-connection-type": "WIFI",
             "accept-encoding": "gzip, deflate",
             "x-ig-android-id": typeof this.device.androidId !== "undefined" ? this.device.androidId : "",
         };
