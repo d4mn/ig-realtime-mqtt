@@ -12,6 +12,7 @@ import { RealtimeMessage } from "./realtime.message";
 import { graphqlTransformer } from "./transformers/graphql.transformer";
 import { skywalkerTransformer } from "./transformers/skywalker.transformer";
 import { EventEmitter } from "stream";
+import { RealtimeDirect } from "./direct";
 
 const log = debug("ig:realtime:core");
 
@@ -28,7 +29,8 @@ export class IgpapiRealtime extends EventEmitter {
     public readonly mqtt: RealtimeMqttManager,
     private readonly subject: RealtimeSubject,
     public readonly subscriptions: SubscriptionManager,
-    public readonly topic: RealtimeTopic
+    public readonly topic: RealtimeTopic,
+    public readonly direct: RealtimeDirect
   ) {
     super();
     this.$ = this.subject.asObservable();
