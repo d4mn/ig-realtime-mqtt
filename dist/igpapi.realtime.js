@@ -25,7 +25,7 @@ const skywalker_transformer_1 = require("./transformers/skywalker.transformer");
 const stream_1 = require("stream");
 const log = (0, debug_1.default)("ig:realtime:core");
 class IgpapiRealtime extends stream_1.EventEmitter {
-    constructor(strategy, mqtt, subject, subscriptions, topic, direct) {
+    constructor(strategy, mqtt, subject, subscriptions, topic, direct, iris) {
         super();
         this.strategy = strategy;
         this.mqtt = mqtt;
@@ -33,6 +33,7 @@ class IgpapiRealtime extends stream_1.EventEmitter {
         this.subscriptions = subscriptions;
         this.topic = topic;
         this.direct = direct;
+        this.iris = iris;
         this.safeDisconnect = false;
         _IgpapiRealtime_subscription.set(this, void 0);
         this.$ = this.subject.asObservable();
@@ -66,21 +67,7 @@ class IgpapiRealtime extends stream_1.EventEmitter {
         }))
             .subscribe(this.subject), "f");
         this.setupListeners();
-        await Promise.all([
-            new Promise((res, rej) => client.on("connect", async (packet) => {
-                this.emit("connect", packet);
-                log("Connected.");
-                try {
-                    await this.subscriptions.restore();
-                    await this.strategy.setup(client);
-                    res();
-                }
-                catch (e) {
-                    rej(e);
-                }
-            })),
-            this.strategy.connect(client),
-        ]);
+        return this.strategy.connect(client);
     }
     disconnect() {
         this.safeDisconnect = true;
@@ -89,6 +76,15 @@ class IgpapiRealtime extends stream_1.EventEmitter {
     setupListeners() {
         log(`Setting up listeners`);
         const messageDebug = log.extend("message");
+        this.mqtt.client().on('connect', async (packet) => {
+            log('Connected.');
+            this.emit("connect", packet);
+            await this.subscriptions.restore();
+            await this.strategy.setup(this.mqtt.client());
+            if (this.iris.hasStrategy()) {
+                await this.iris.subscribe();
+            }
+        });
         this.mqtt.client().on("message", (m) => {
             messageDebug(`topic: ${this.topic.decode(m.topic)} QoS: ${m.qosLevel} length: ${m.payload.byteLength} bytes`);
         });
