@@ -53,7 +53,7 @@ class AndroidState {
     }
     get deviceDescriptor() {
         if (!this.userAgent)
-            return null;
+            return "";
         const matches = this.userAgent.match(/\((.*?)\)/);
         if (matches && matches.length > 1) {
             return matches[1];

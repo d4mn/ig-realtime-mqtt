@@ -72,8 +72,8 @@ export class AndroidState {
     return this.session.userAgent;
   }
 
-  public get deviceDescriptor() {
-    if (!this.userAgent) return null;
+  public get deviceDescriptor(): string {
+    if (!this.userAgent) return "";
     const matches = this.userAgent.match(/\((.*?)\)/);
 
     // Check if there are matches and return the first group if found
