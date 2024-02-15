@@ -72,6 +72,17 @@ export class AndroidState {
     return this.session.userAgent;
   }
 
+  public get deviceDescriptor() {
+    if (!this.userAgent) return null;
+    const matches = this.userAgent.match(/\((.*?)\)/);
+
+    // Check if there are matches and return the first group if found
+    if (matches && matches.length > 1) {
+      return matches[1];
+    }
+    return "";
+  }
+
   public get authorization() {
     if (this.session.authorization) {
       const dt = Buffer.from(this.session.authorization.replace("Bearer IGT:2:", ""), "base64").toString("utf8");

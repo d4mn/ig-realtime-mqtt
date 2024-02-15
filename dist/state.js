@@ -51,6 +51,15 @@ class AndroidState {
     get userAgent() {
         return this.session.userAgent;
     }
+    get deviceDescriptor() {
+        if (!this.userAgent)
+            return null;
+        const matches = this.userAgent.match(/\((.*?)\)/);
+        if (matches && matches.length > 1) {
+            return matches[1];
+        }
+        return "";
+    }
     get authorization() {
         if (this.session.authorization) {
             const dt = Buffer.from(this.session.authorization.replace("Bearer IGT:2:", ""), "base64").toString("utf8");

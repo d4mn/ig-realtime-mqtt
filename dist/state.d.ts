@@ -42,6 +42,7 @@ export declare class AndroidState {
     device: any;
     constructor(session: any, device: any);
     get userAgent(): string | undefined;
+    get deviceDescriptor(): string | null;
     get authorization(): any;
     get cookies(): any;
     get sessionid(): any;
