@@ -34,14 +34,14 @@ export declare class AndroidSession {
     userAgent?: string;
     user?: string;
     uid?: number;
-    checkpoint?: string;
-    challengePath?: string;
     constructor(session: any);
 }
 export declare class AndroidState {
     session: AndroidSession;
     application: typeof Application.android;
     device: any;
+    checkpoint?: string;
+    challengePath?: string;
     constructor(session: any, device: any);
     get userAgent(): string | undefined;
     get deviceDescriptor(): string;
