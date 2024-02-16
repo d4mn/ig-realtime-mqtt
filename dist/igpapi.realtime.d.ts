@@ -1,11 +1,10 @@
-/// <reference types="node" />
 import { RealtimeMqttManager } from "./realtime.mqtt.manager";
 import { RealtimeMqttStrategy } from "./realtime.mqtt.strategy";
 import { SubscriptionManager } from "./subscriptions/subscription-manager";
 import { RealtimeSubject } from "./realtime.subject";
 import { RealtimeTopic } from "./realtime.topic";
 import { RealtimeMessage } from "./realtime.message";
-import { EventEmitter } from "stream";
+import { EventEmitter } from "eventemitter3";
 import { RealtimeDirect } from "./direct";
 import { Iris } from "./iris";
 export declare class IgpapiRealtime extends EventEmitter {

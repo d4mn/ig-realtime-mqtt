@@ -22,9 +22,9 @@ const operators_1 = require("rxjs/operators");
 const mqttot_1 = require("@igpapi/mqttot");
 const graphql_transformer_1 = require("./transformers/graphql.transformer");
 const skywalker_transformer_1 = require("./transformers/skywalker.transformer");
-const stream_1 = require("stream");
+const eventemitter3_1 = require("eventemitter3");
 const log = (0, debug_1.default)("ig:realtime:core");
-class IgpapiRealtime extends stream_1.EventEmitter {
+class IgpapiRealtime extends eventemitter3_1.EventEmitter {
     constructor(strategy, mqtt, subject, subscriptions, topic, direct, iris) {
         super();
         this.strategy = strategy;

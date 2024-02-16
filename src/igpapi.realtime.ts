@@ -11,7 +11,7 @@ import { tryUnzipAsync } from "@igpapi/mqttot";
 import { RealtimeMessage } from "./realtime.message";
 import { graphqlTransformer } from "./transformers/graphql.transformer";
 import { skywalkerTransformer } from "./transformers/skywalker.transformer";
-import { EventEmitter } from "stream";
+import { EventEmitter } from "eventemitter3";
 import { RealtimeDirect } from "./direct";
 import { Iris } from "./iris";
 
