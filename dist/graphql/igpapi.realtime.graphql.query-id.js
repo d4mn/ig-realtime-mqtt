@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IgpapiRealtimeGraphqlQueryId = void 0;
+var IgpapiRealtimeGraphqlQueryId;
+(function (IgpapiRealtimeGraphqlQueryId) {
+    IgpapiRealtimeGraphqlQueryId["appPresence"] = "17846944882223835";
+    IgpapiRealtimeGraphqlQueryId["asyncAdSub"] = "17911191835112000";
+    IgpapiRealtimeGraphqlQueryId["clientConfigUpdate"] = "17849856529644700";
+    IgpapiRealtimeGraphqlQueryId["directStatus"] = "17854499065530643";
+    IgpapiRealtimeGraphqlQueryId["directTyping"] = "17867973967082385";
+    IgpapiRealtimeGraphqlQueryId["liveWave"] = "17882305414154951";
+    IgpapiRealtimeGraphqlQueryId["interactivityActivateQuestion"] = "18005526940184517";
+    IgpapiRealtimeGraphqlQueryId["interactivityRealtimeQuestionSubmissionsStatus"] = "18027779584026952";
+    IgpapiRealtimeGraphqlQueryId["interactivitySub"] = "17907616480241689";
+    IgpapiRealtimeGraphqlQueryId["liveRealtimeComments"] = "18006547105399202";
+    IgpapiRealtimeGraphqlQueryId["liveReactions"] = "17911016540418009";
+    IgpapiRealtimeGraphqlQueryId["liveTypingIndicator"] = "17926314067024917";
+    IgpapiRealtimeGraphqlQueryId["mediaFeedback"] = "17877917527113814";
+    IgpapiRealtimeGraphqlQueryId["reactNativeOTA"] = "17861494672288167";
+    IgpapiRealtimeGraphqlQueryId["videoCallCoWatchControl"] = "17878679623388956";
+    IgpapiRealtimeGraphqlQueryId["videoCallInAlert"] = "17878679623388956";
+    IgpapiRealtimeGraphqlQueryId["videoCallPrototypePublish"] = "18031704190010162";
+    IgpapiRealtimeGraphqlQueryId["videoCallParticipantDelivery"] = "17977239895057311";
+    IgpapiRealtimeGraphqlQueryId["zeroProvision"] = "17913953740109069";
+    IgpapiRealtimeGraphqlQueryId["inappNotification"] = "17899377895239777";
+    IgpapiRealtimeGraphqlQueryId["businessDelivery"] = "17940467278199720";
+    IgpapiRealtimeGraphqlQueryId["livePinnedProduct"] = "17858277713002581";
+    IgpapiRealtimeGraphqlQueryId["userThreadPresence"] = "18170461249042896";
+})(IgpapiRealtimeGraphqlQueryId = exports.IgpapiRealtimeGraphqlQueryId || (exports.IgpapiRealtimeGraphqlQueryId = {}));
+//# sourceMappingURL=igpapi.realtime.graphql.query-id.js.map
