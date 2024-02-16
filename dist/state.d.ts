@@ -34,6 +34,8 @@ export declare class AndroidSession {
     userAgent?: string;
     user?: string;
     uid?: number;
+    checkpoint?: string;
+    challengePath?: string;
     constructor(session: any);
 }
 export declare class AndroidState {

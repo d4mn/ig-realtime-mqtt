@@ -41,6 +41,8 @@ export class AndroidSession {
   userAgent?: string;
   user?: string;
   uid?: number;
+  checkpoint?: string;
+  challengePath?: string;
 
   constructor(session: any) {
     this.igWWWClaim = session.igWWWClaim ? session.igWWWClaim : "0";
