@@ -1,1 +1,0 @@
-{"version":3,"file":"graphql.transformer.d.ts","sourceRoot":"","sources":["../../src/transformers/graphql.transformer.ts"],"names":[],"mappings":";AAEA,MAAM,WAAW,wBAAwB,CAAC,CAAC;IACzC,KAAK,EAAE,MAAM,CAAC;IACd,OAAO,EAAE,CAAC,CAAC;CACZ;AAED,wBAAgB,kBAAkB,CAAC,CAAC,EAAE,IAAI,EAAE,MAAM,GAAG,wBAAwB,CAAC,CAAC,CAAC,CAS/E"}

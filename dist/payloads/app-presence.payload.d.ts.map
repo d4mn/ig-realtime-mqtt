@@ -1,1 +1,0 @@
-{"version":3,"file":"app-presence.payload.d.ts","sourceRoot":"","sources":["../../src/payloads/app-presence.payload.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,uBAAuB;IACtC,cAAc,EAAE,gBAAgB,CAAC;CAClC;AAED,MAAM,WAAW,gBAAgB;IAC/B,OAAO,EAAE,MAAM,CAAC;IAChB,SAAS,EAAE,OAAO,CAAC;IACnB,mBAAmB,EAAE,MAAM,CAAC;IAC5B,UAAU,EAAE,GAAG,EAAE,CAAC;CACnB"}
