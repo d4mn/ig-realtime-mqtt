@@ -15,11 +15,11 @@ export declare class IgpapiRealtime extends EventEmitter {
     private readonly subject;
     readonly subscriptions: SubscriptionManager;
     readonly topic: RealtimeTopic;
-    readonly direct: RealtimeDirect;
-    readonly iris: Iris;
+    readonly direct?: RealtimeDirect | undefined;
+    readonly iris?: Iris | undefined;
     $: import("rxjs").Observable<RealtimeMessage<any>>;
     private safeDisconnect;
-    constructor(strategy: RealtimeMqttStrategy, mqtt: RealtimeMqttManager, subject: RealtimeSubject, subscriptions: SubscriptionManager, topic: RealtimeTopic, direct: RealtimeDirect, iris: Iris);
+    constructor(strategy: RealtimeMqttStrategy, mqtt: RealtimeMqttManager, subject: RealtimeSubject, subscriptions: SubscriptionManager, topic: RealtimeTopic, direct?: RealtimeDirect | undefined, iris?: Iris | undefined);
     connect(): Promise<void>;
     disconnect(): Promise<any>;
     protected setupListeners(): void;

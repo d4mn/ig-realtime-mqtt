@@ -81,7 +81,7 @@ class IgpapiRealtime extends stream_1.EventEmitter {
             this.emit("connect", packet);
             await this.subscriptions.restore();
             await this.strategy.setup(this.mqtt.client());
-            if (this.iris.hasStrategy()) {
+            if (this.iris && this.iris.hasStrategy()) {
                 await this.iris.subscribe();
             }
         });

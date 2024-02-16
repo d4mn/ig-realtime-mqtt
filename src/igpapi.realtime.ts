@@ -31,8 +31,8 @@ export class IgpapiRealtime extends EventEmitter {
     private readonly subject: RealtimeSubject,
     public readonly subscriptions: SubscriptionManager,
     public readonly topic: RealtimeTopic,
-    public readonly direct: RealtimeDirect,
-    public readonly iris: Iris
+    public readonly direct?: RealtimeDirect,
+    public readonly iris?: Iris
   ) {
     super();
     this.$ = this.subject.asObservable();
@@ -83,7 +83,7 @@ export class IgpapiRealtime extends EventEmitter {
       this.emit("connect", packet);
       await this.subscriptions.restore();
       await this.strategy.setup(this.mqtt.client());
-      if (this.iris.hasStrategy()) {
+      if (this.iris && this.iris.hasStrategy()) {
         await this.iris.subscribe();
       }
     });
