@@ -41,6 +41,14 @@ export class AndroidSession {
   userAgent?: string;
   user?: string;
   uid?: number;
+  fbnsAuth?: {
+    ck?: number;
+    cs?: string;
+    di?: string;
+    ds?: string;
+    sr?: string;
+    rc?: string;
+  };
 
   constructor(session: any) {
     this.igWWWClaim = session.igWWWClaim ? session.igWWWClaim : "0";
@@ -54,6 +62,7 @@ export class AndroidSession {
     this.userAgent = session.userAgent;
     this.user = session.user;
     this.uid = session.uid;
+    this.fbnsAuth = session.fbnsAuth;
   }
 }
 

@@ -34,6 +34,14 @@ export declare class AndroidSession {
     userAgent?: string;
     user?: string;
     uid?: number;
+    fbnsAuth?: {
+        ck?: number;
+        cs?: string;
+        di?: string;
+        ds?: string;
+        sr?: string;
+        rc?: string;
+    };
     constructor(session: any);
 }
 export declare class AndroidState {

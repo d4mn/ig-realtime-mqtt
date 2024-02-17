@@ -39,6 +39,7 @@ class AndroidSession {
         this.userAgent = session.userAgent;
         this.user = session.user;
         this.uid = session.uid;
+        this.fbnsAuth = session.fbnsAuth;
     }
 }
 exports.AndroidSession = AndroidSession;
