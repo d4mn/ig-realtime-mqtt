@@ -10,7 +10,10 @@ export declare const Application: {
         FACEBOOK_ANALYTICS_APPLICATION_ID: string;
         BLOKS_VERSION_ID: string;
         CAPABILITIES: string;
-        SUPPORTED_CAPABILITIES: string;
+        SUPPORTED_CAPABILITIES: {
+            name: string;
+            value: string;
+        }[];
     };
     ios: {
         APP_VERSION: string;
@@ -19,7 +22,10 @@ export declare const Application: {
         FACEBOOK_ANALYTICS_APPLICATION_ID: string;
         BLOKS_VERSION_ID: string;
         CAPABILITIES: string;
-        SUPPORTED_CAPABILITIES: string;
+        SUPPORTED_CAPABILITIES: {
+            name: string;
+            value: string;
+        }[];
     };
 };
 export declare class AndroidSession {
