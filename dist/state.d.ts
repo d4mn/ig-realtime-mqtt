@@ -7,6 +7,7 @@ export declare const Application: {
         APP_VERSION: string;
         APP_VERSION_CODE: string;
         BREADCRUMB_KEY: string;
+        FBNS_APP_ID: string;
         FACEBOOK_ANALYTICS_APPLICATION_ID: string;
         BLOKS_VERSION_ID: string;
         CAPABILITIES: string;
@@ -19,6 +20,7 @@ export declare const Application: {
         APP_VERSION: string;
         APP_VERSION_CODE: string;
         BREADCRUMB_KEY: string;
+        FBNS_APP_ID: string;
         FACEBOOK_ANALYTICS_APPLICATION_ID: string;
         BLOKS_VERSION_ID: string;
         CAPABILITIES: string;
