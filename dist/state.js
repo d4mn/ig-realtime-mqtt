@@ -18,14 +18,14 @@ exports.Application = {
         SUPPORTED_CAPABILITIES: [{ "name": "SUPPORTED_SDK_VERSIONS", "value": "119.0,120.0,121.0,122.0,123.0,124.0,125.0,126.0,127.0,128.0,129.0,130.0,131.0,132.0,133.0,134.0,135.0,136.0,137.0,138.0,139.0,140.0,141.0,142.0,143.0,144.0,145.0" }, { "name": "FACE_TRACKER_VERSION", "value": "14" }, { "name": "segmentation", "value": "segmentation_enabled" }, { "name": "COMPRESSION", "value": "ETC2_COMPRESSION" }, { "name": "world_tracker", "value": "world_tracker_enabled" }, { "name": "gyroscope", "value": "gyroscope_enabled" }],
     },
     ios: {
-        APP_VERSION: "248.0.0.13.109",
-        APP_VERSION_CODE: "389935066",
+        APP_VERSION: "289.1.0.21.50",
+        APP_VERSION_CODE: "489311218",
         BREADCRUMB_KEY: "iN4$aGr0m",
         FBNS_APP_ID: "567310203415052",
         FACEBOOK_ANALYTICS_APPLICATION_ID: "124024574287414",
-        BLOKS_VERSION_ID: "8939191d9c47a35f5d91b65cc119fbe3c215947d6aedc7a4a6945cec0763c43a",
+        BLOKS_VERSION_ID: "e92613e69e71e8b94426ead31b44d42a54f338aa63787dcdd2df4bd869af3cc4",
         CAPABILITIES: "36r/F/8=",
-        SUPPORTED_CAPABILITIES: [{ "name": "SUPPORTED_SDK_VERSIONS", "value": "119.0,120.0,121.0,122.0,123.0,124.0,125.0,126.0,127.0,128.0,129.0,130.0,131.0,132.0,133.0,134.0,135.0,136.0,137.0,138.0,139.0,140.0,141.0,142.0,143.0,144.0,145.0" }, { "name": "FACE_TRACKER_VERSION", "value": "14" }, { "name": "segmentation", "value": "segmentation_enabled" }, { "name": "COMPRESSION", "value": "ETC2_COMPRESSION" }, { "name": "world_tracker", "value": "world_tracker_enabled" }, { "name": "gyroscope", "value": "gyroscope_enabled" }],
+        SUPPORTED_CAPABILITIES: [{ "name": "hair_segmentation", "value": "hair_segmentation_enabled" }, { "name": "body_tracking", "value": "body_tracking_enabled" }, { "name": "GYROSCOPE", "value": "GYROSCOPE_ENABLED" }, { "name": "SUPPORTED_SDK_VERSIONS", "value": "131.0,132.0,133.0,134.0,135.0,136.0,137.0,138.0,139.0,140.0,141.0,142.0,143.0,144.0,145.0,146.0,147.0,148.0,149.0,150.0,151.0,152.0,153.0,154.0,155.0,156.0,157.0,158.0,159.0,160.0,161.0,162.0,163.0,164.0,165.0,166.0" }, { "name": "COMPRESSION", "value": "PVR_COMPRESSION" }, { "name": "FACE_TRACKER_VERSION", "value": "14" }],
     },
 };
 class AndroidSession {
