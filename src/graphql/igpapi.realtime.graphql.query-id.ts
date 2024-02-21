@@ -23,4 +23,5 @@ export enum IgpapiRealtimeGraphqlQueryId {
   businessDelivery = '17940467278199720',
   livePinnedProduct = '17858277713002581',
   userThreadPresence = '18170461249042896',
+  statusSubscribe = '17966652049597151'
 }

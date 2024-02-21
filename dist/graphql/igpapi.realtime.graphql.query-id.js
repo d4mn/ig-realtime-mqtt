@@ -26,5 +26,6 @@ var IgpapiRealtimeGraphqlQueryId;
     IgpapiRealtimeGraphqlQueryId["businessDelivery"] = "17940467278199720";
     IgpapiRealtimeGraphqlQueryId["livePinnedProduct"] = "17858277713002581";
     IgpapiRealtimeGraphqlQueryId["userThreadPresence"] = "18170461249042896";
+    IgpapiRealtimeGraphqlQueryId["statusSubscribe"] = "17966652049597151";
 })(IgpapiRealtimeGraphqlQueryId = exports.IgpapiRealtimeGraphqlQueryId || (exports.IgpapiRealtimeGraphqlQueryId = {}));
 //# sourceMappingURL=igpapi.realtime.graphql.query-id.js.map

@@ -21,6 +21,7 @@ export declare enum IgpapiRealtimeGraphqlQueryId {
     inappNotification = "17899377895239777",
     businessDelivery = "17940467278199720",
     livePinnedProduct = "17858277713002581",
-    userThreadPresence = "18170461249042896"
+    userThreadPresence = "18170461249042896",
+    statusSubscribe = "17966652049597151"
 }
 //# sourceMappingURL=igpapi.realtime.graphql.query-id.d.ts.map
