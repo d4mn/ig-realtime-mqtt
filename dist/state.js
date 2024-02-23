@@ -52,7 +52,12 @@ class AndroidState {
         this.application = device.platform === "android" ? exports.Application.android : exports.Application.ios;
     }
     get userAgent() {
-        return this.session.userAgent;
+        let ua = this.session.userAgent;
+        if (typeof ua !== 'undefined' && ua != "") {
+            ua = ua.replace(/\b\d+(\.\d+){3,}\b/, this.application.APP_VERSION);
+            ua = ua.replace(/;\s(\d+)\)/, `; ${this.application.APP_VERSION_CODE})`);
+        }
+        return ua;
     }
     get deviceDescriptor() {
         if (!this.userAgent)
